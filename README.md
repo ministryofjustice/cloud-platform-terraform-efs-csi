@@ -51,8 +51,9 @@ Some of the inputs are tags. All infrastructure resources need to be tagged acco
 | infrastructure-support | The team responsible for managing the infrastructure. Should be of the form team-email | string | - | yes |
 | is-production |  | string | `false` | yes |
 | team_name |  | string | - | yes |
-| sqs_name |  | string | - | yes |
 
 ## Reading Material
 
-https://github.com/kubernetes-sigs/aws-efs-csi-driver
+Chart: https://github.com/kubernetes-sigs/aws-efs-csi-driver
+
+Installation docs: https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/docs
