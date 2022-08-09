@@ -1,16 +1,9 @@
-# cloud-platform-terraform-_template_
+# cloud-platform-terraform-efs-csi
 
-_note: Please remove all comments in italics and fill where required>_
-
-_Please change the urls in the release badge below_
-[![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-template/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-template/releases)
-
-_Short describion of the module_
-_This Terraform module ......_
+EFS (NFS compatible) storage backend for Kubernetes
 
 ## Usage
 
-_Describe how to use the module_
 See the [examples/](examples/) folder.
 
 <!--- BEGIN_TF_DOCS --->
@@ -25,21 +18,27 @@ See the [examples/](examples/) folder.
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | n/a |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_efs_irsa"></a> [efs\_irsa](#module\_efs\_irsa) | github.com/ministryofjustice/cloud-platform-terraform-irsa | 1.0.3 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
-| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+| [aws_iam_policy.efs_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [helm_release.aws_efs](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [aws_iam_policy_document.efs_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_eks_cluster"></a> [eks\_cluster](#input\_eks\_cluster) | cluster name | `string` | n/a | yes |
 
 ## Outputs
 
@@ -59,8 +58,9 @@ Some of the inputs are tags. All infrastructure resources need to be tagged acco
 | infrastructure-support | The team responsible for managing the infrastructure. Should be of the form team-email | string | - | yes |
 | is-production |  | string | `false` | yes |
 | team_name |  | string | - | yes |
-| sqs_name |  | string | - | yes |
 
 ## Reading Material
 
-_add link to external source_
+Chart: https://kubernetes-sigs.github.io/aws-efs-csi-driver/index.yaml
+
+Installation docs: https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/docs

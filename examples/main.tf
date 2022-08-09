@@ -5,5 +5,5 @@ provider "aws" {
 
 module "template" {
   source = "../"
-
+  eks_cluster = "test"
 }
