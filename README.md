@@ -61,6 +61,6 @@ Some of the inputs are tags. All infrastructure resources need to be tagged acco
 
 ## Reading Material
 
-Chart: https://github.com/kubernetes-sigs/aws-efs-csi-driver
+Chart: https://kubernetes-sigs.github.io/aws-efs-csi-driver/index.yaml
 
 Installation docs: https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/docs
