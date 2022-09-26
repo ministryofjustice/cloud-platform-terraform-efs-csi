@@ -62,7 +62,7 @@ resource "helm_release" "aws_efs" {
   chart      = "aws-efs-csi-driver"
   repository = "https://kubernetes-sigs.github.io/aws-efs-csi-driver"
   namespace  = "kube-system"
-  version    = "2.2.7"
+  version    = "2.2.8"
 
   set {
     name  = "controller.serviceAccount.create"
