@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "efs_doc" {
     condition {
       test     = "StringLike"
       variable = "aws:RequestTag/efs.csi.aws.com/cluster"
-      values = ["true"]
+      values   = ["true"]
     }
   }
 
@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "efs_doc" {
     condition {
       test     = "StringEquals"
       variable = "aws:ResourceTag/efs.csi.aws.com/cluster"
-      values = ["true"]
+      values   = ["true"]
     }
   }
 }
