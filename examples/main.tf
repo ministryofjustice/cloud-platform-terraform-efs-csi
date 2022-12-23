@@ -4,6 +4,6 @@ provider "aws" {
 }
 
 module "template" {
-  source = "../"
+  source      = "../"
   eks_cluster = "test"
 }
